@@ -23,7 +23,11 @@ platform :ios do
 
   desc "Build"
   lane :build do
-    match(type: "development")
+    match(
+      git_url: "https://github.com/CatchZeng/CIDemo", 
+      type: "development",
+      app_identifier: "com.catchzeng.CIDemo"
+    )
     gym(
       scheme: "CIDemo",
       export_method: "development",
