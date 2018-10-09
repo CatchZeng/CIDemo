@@ -1,0 +1,34 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Test"
+  lane :tests do
+    run_tests(scheme: "CIDemo")
+  end
+
+  desc "Build"
+  lane :build do
+    gym(scheme: "CIDemo",export_method:"development")
+  end
+
+  desc "Deploy"
+  lane :deploy do
+    sh "python fir.py -p ../CIDemo.ipa"
+  end
+
+end
