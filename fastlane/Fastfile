@@ -23,8 +23,7 @@ platform :ios do
 
   desc "Build"
   lane :build do
-    enable_automatic_code_signing(path: "CIDemo.xcodeproj")
-    gym(scheme: "CIDemo", export_method:"development", export_xcargs: "-allowProvisioningUpdates")
+    gym(scheme: "CIDemo", export_method:"development")
   end
 
   desc "Deploy"
