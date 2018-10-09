@@ -23,7 +23,7 @@ platform :ios do
 
   desc "Build"
   lane :build do
-    gym(scheme: "CIDemo",export_method:"development",use_legacy_build_api:true:true,clean:true)
+    gym(scheme: "CIDemo",export_method:"development",use_legacy_build_api:true,clean:true)
   end
 
   desc "Deploy"
