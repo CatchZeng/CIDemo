@@ -23,7 +23,13 @@ platform :ios do
 
   desc "Build"
   lane :build do
-    gym(scheme: "CIDemo", export_method:"development")
+    match(type: "development")
+    gym(
+      scheme: "CIDemo",
+      export_method: "development",
+      clean: true,
+      export_xcargs: "-allowProvisioningUpdates"
+    )
   end
 
   desc "Deploy"
