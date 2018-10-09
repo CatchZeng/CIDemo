@@ -1,2 +1,5 @@
 CIDemo.xcodeproj/xcuserdata
 CIDemo.xcodeproj/project.xcworkspace/xcuserdata
+fastlane/report.xml
+CIDemo.app.dSYM.zip
+CIDemo.ipa

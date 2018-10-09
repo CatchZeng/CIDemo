@@ -23,7 +23,7 @@ platform :ios do
 
   desc "Build"
   lane :build do
-    gym(scheme: "CIDemo",export_method:"development",clean:true,export_xcargs: "-allowProvisioningUpdates")
+    gym(scheme: "CIDemo", export_method:"development", export_xcargs: "-allowProvisioningUpdates")
   end
 
   desc "Deploy"
