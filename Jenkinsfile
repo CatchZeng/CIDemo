@@ -3,19 +3,23 @@ pipeline {
   stages {
     stage('test') {
       steps {
-        sh 'fastlane test'
+        sh '''export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+fastlane test'''
       }
     }
-
     stage('build') {
       steps {
-        sh 'fastlane build'
+        sh '''export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+fastlane build'''
       }
     }
-
     stage('deploy') {
       steps {
-        sh 'fastlane deploy'
+        sh '''export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+fastlane deploy'''
       }
     }
   }
