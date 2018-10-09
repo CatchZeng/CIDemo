@@ -23,6 +23,7 @@ platform :ios do
 
   desc "Build"
   lane :build do
+    match(type: "development")
     gym(scheme: "CIDemo",export_method:"development")
   end
 
