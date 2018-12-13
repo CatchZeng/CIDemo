@@ -1,21 +1,13 @@
 pipeline {
-  agent any
-  stages {
-    stage('Example') {
-      steps {
-        echo 'Hello World'
-      }
+    agent any
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Catch Zeng', description: 'Who should I say hello to?')
     }
-  }
-  post { 
-    always { 
-      echo 'I will always say Hello again!'
+    stages {
+        stage('Example') {
+            steps {
+                echo "Hello ${params.PERSON}"
+            }
+        }
     }
-    failure {
-      echo 'failure'
-    }
-    success {
-      echo 'success'
-    }
-  }
 }
