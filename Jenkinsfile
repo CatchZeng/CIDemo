@@ -9,5 +9,20 @@ pipeline {
                 echo "Hello ${params.PERSON}"
             }
         }
+        stage('catch') {
+            when {
+              allOf {
+                branch 'master'
+                expression {
+                  shortCommit = sh(returnStdout: true, script: "git log --format=%B -n 1").trim()
+                  echo "${shortCommit}"
+                  return shortCommit =~ /catch/
+                }
+              }
+            }
+            steps {
+              echo 'catch'
+            }
+        }
     }
 }
