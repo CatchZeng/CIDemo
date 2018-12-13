@@ -9,7 +9,8 @@ pipeline {
         BB = 'World'
       }
       steps {
-        echo '${env.AA} ${env.BB}'
+        echo "${env.AA} ${env.BB}"
+        echo "Running on ${env.JENKINS_URL}"
       }
     }
   }
