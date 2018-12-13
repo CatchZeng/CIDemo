@@ -1,21 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('branch') {
-      when {
-        branch 'master'
-      }
+    stage('Example') {
       steps {
-        echo 'Hello World on master branch'
+        echo 'Hello World'
       }
     }
-    stage('branch release') {
-      when {
-        branch 'release'
-      }
-      steps {
-        echo 'Hello World on release branch'
-      }
+  }
+  post { 
+    always { 
+      echo 'I will always say Hello again!'
+    }
+    failure {
+      echo 'failure'
+    }
+    success {
+      echo 'success'
     }
   }
 }
