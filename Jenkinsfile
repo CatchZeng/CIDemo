@@ -1,16 +1,20 @@
 pipeline {
   agent any
-  environment { 
-    AA = 'Hello'
-  }
   stages {
-    stage('test') {
-      environment { 
-        BB = 'World'
+    stage('branch') {
+      when {
+        branch 'master'
       }
       steps {
-        echo "${env.AA} ${env.BB}"
-        echo "Running on ${env.JENKINS_URL}"
+        echo 'Hello World on master branch'
+      }
+    }
+    stage('branch release') {
+      when {
+        branch 'release'
+      }
+      steps {
+        echo 'Hello World on release branch'
       }
     }
   }
